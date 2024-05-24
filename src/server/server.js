@@ -13,12 +13,14 @@ const InputError = require('../exceptions/InputError');
             cors: {
               origin: ['*'],
             },
+            /*
             payload: {
                 maxBytes: 1000000,
-                output: 'stream',
-                parse: true,
+                // output: 'stream',
+                // parse: true,
                 multipart: true
-        },
+            },
+            */
     },
 });
 

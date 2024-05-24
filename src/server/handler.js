@@ -12,15 +12,15 @@ async function postPredictHandler(request, h) {
     const { image } = request.payload;
     const { model } = request.server.app;
 
-    // if image does  not exist
-    if (!image || !image._data) {
-      throw new InputError("Image file is missing or invalid");
-    }
+    // // if image does  not exist
+    // if (!image || !image._data) {
+    //   throw new InputError("Image file is missing or invalid");
+    // }
 
-    // if image exceeds the size limit
-    if (image._data.length > 1000000) {
-      throw new InputError("Payload content length greater than maximum allowed: 1000000");
-    }
+    // // if image exceeds the size limit
+    // if (image._data.length > 1000000) {
+    //   throw new InputError("Payload content length greater than maximum allowed: 1000000");
+    // }
 
     const { label, suggestion } = await predictClassification(model, image);
     const id = crypto.randomUUID();
